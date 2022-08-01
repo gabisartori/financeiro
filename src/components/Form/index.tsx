@@ -4,11 +4,11 @@ import * as C from './style';
 
 export default function Form() {
     
-    const [receita, setReceita] = useState("");
-    const [despesa, setDespesa] = useState("");
+    const [descricao, setDescricao] = useState("");
+    const [quantia, setQuantia] = useState("");
     const [isDespesa, setIsDespesa] = useState(false);
 
-    
+
     return (
         <C.Container>
             <C.InputContent>
