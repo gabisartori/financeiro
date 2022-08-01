@@ -16,7 +16,6 @@ export default function Form() {
             alert("Quantia deve ser positiva");
             return;
         }
-        alert("Salvo com sucesso");
     };
 
 
@@ -24,23 +23,35 @@ export default function Form() {
         <C.Container>
             <C.InputContent>
                 <C.Label>Descrição</C.Label>
-                <C.Input />
+                <C.Input
+                    value={descricao}
+                    onChange={e => setDescricao(e.target.value)}
+                />
             </C.InputContent>
             <C.InputContent>
                 <C.Label>Valor</C.Label>
-                <C.Input />
+                <C.Input 
+                    value={quantia}
+                    type="number"
+                    onChange={e => setQuantia(e.target.value)}
+                />
             </C.InputContent>
             <C.RadioGroup>
                 <C.Input
                     type="radio"
                     defaultChecked
-                    
+                    id='rReceita'
+                    name="group1"
+                    onChange={() => setIsDespesa(!isDespesa)}
                 />
-                <C.Label>Receita</C.Label>
+                <C.Label htmlFor='rReceita'>Receita</C.Label>
                 <C.Input 
                     type="radio"
+                    id='rDespesa'
+                    name="group1"
+                    onChange={() => setIsDespesa(!isDespesa)}
                 />
-                <C.Label>Despesa</C.Label>
+                <C.Label htmlFor='rDespesa'>Despesa</C.Label>
             </C.RadioGroup>
             <C.Button
                 onClick={handleSave}
