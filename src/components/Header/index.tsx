@@ -2,12 +2,12 @@ import * as C from './style';
 
 export default function Header(){
     return(
-        <C.container>
+        <C.Container>
             <C.Header>
                 <C.Title>
-                    Hello world
+                    Minha carteira
                 </C.Title>
             </C.Header>
-        </C.container>
+        </C.Container>
     )
 };
