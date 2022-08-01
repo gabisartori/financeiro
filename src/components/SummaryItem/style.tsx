@@ -27,6 +27,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
+    margin: 20px auto;
     display: flex;
     align-items: center;
     justify-content: center;
