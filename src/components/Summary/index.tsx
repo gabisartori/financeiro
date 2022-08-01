@@ -11,7 +11,7 @@ export default function Summary(){
         <C.Container>
             <SummaryItem text="Receita" total={12.8} icon={FaRegArrowAltCircleUp}/>
             <SummaryItem text="Despesas" total={5.4} icon={FaRegArrowAltCircleDown}/>
-            <SummaryItem text="Saldo" total={12.8-5.4} icon={FaDollarSign}/>
+            <SummaryItem text="Total" total={12.8-5.4} icon={FaDollarSign}/>
         </C.Container>
         )
 };
