@@ -8,6 +8,17 @@ export default function Form() {
     const [quantia, setQuantia] = useState("");
     const [isDespesa, setIsDespesa] = useState(false);
 
+    const handleSave = () => {
+        if (!descricao || !quantia) {
+            alert("Preencha todos os campos");
+            return;
+        } else if (Number(quantia) < 0){
+            alert("Quantia deve ser positiva");
+            return;
+        }
+        alert("Salvo com sucesso");
+    };
+
 
     return (
         <C.Container>
@@ -31,7 +42,9 @@ export default function Form() {
                 />
                 <C.Label>Despesa</C.Label>
             </C.RadioGroup>
-            <C.Button>Adicionar</C.Button>
+            <C.Button
+                onClick={handleSave}
+            >Adicionar</C.Button>
         </C.Container>
         );
 }
