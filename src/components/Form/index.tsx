@@ -1,7 +1,14 @@
+import React, { useState } from 'react';
 import * as C from './style';
 
 
 export default function Form() {
+    
+    const [receita, setReceita] = useState("");
+    const [despesa, setDespesa] = useState("");
+    const [isDespesa, setIsDespesa] = useState(false);
+
+    
     return (
         <C.Container>
             <C.InputContent>
@@ -17,10 +24,12 @@ export default function Form() {
                     type="radio"
                     defaultChecked
                     
-                /> Renda
+                />
+                <C.Label>Receita</C.Label>
                 <C.Input 
                     type="radio"
-                /> Despesa
+                />
+                <C.Label>Despesa</C.Label>
             </C.RadioGroup>
             <C.Button>Adicionar</C.Button>
         </C.Container>
