@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import * as C from './style';
 
+type FormProps = {
+    handleAdd: Function
+} 
 
-export default function Form() {
+
+export default function Form(props: FormProps){
     
     const [descricao, setDescricao] = useState("");
     const [quantia, setQuantia] = useState("");
@@ -16,6 +20,17 @@ export default function Form() {
             alert("Quantia deve ser positiva");
             return;
         }
+
+        const entrada = {
+            desc: descricao,
+            quant: Number(quantia),
+            gasto: isDespesa
+        };
+
+        props.handleAdd(entrada);
+
+        setDescricao("");
+        setQuantia("");
     };
 
 

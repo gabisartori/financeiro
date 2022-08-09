@@ -6,12 +6,18 @@ import {
     FaDollarSign
 } from "react-icons/fa";
 
-export default function Summary(){
+type SummaryProps = {
+    receitas: number
+    despesas: number
+    total: number
+}
+
+export default function Summary(props: SummaryProps){
     return(
         <C.Container>
-            <SummaryItem text="Receita" total={12.8} icon={FaRegArrowAltCircleUp}/>
-            <SummaryItem text="Despesas" total={5.4} icon={FaRegArrowAltCircleDown}/>
-            <SummaryItem text="Total" total={12.8-5.4} icon={FaDollarSign}/>
+            <SummaryItem text="Receita" total={props.receitas} icon={FaRegArrowAltCircleUp}/>
+            <SummaryItem text="Despesas" total={props.despesas} icon={FaRegArrowAltCircleDown}/>
+            <SummaryItem text="Total" total={props.total} icon={FaDollarSign}/>
         </C.Container>
         )
 };
