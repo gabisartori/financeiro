@@ -48,7 +48,7 @@ function App() {
     <div>
       <GlobalStyle />
       <Header />
-      <Summary receitas={receitas} despesas={despesas} total={total} />
+      <Summary receitas={receitas.toFixed(2)} despesas={despesas.toFixed(2)} total={total.toFixed(2)} />
       <Form handleAdd={handleAdd}/>
     </div>
   );

@@ -3,7 +3,7 @@ import * as C from './style';
 
 type SummaryItemProps = {
     text: string
-    total: number
+    total: string
     icon: IconType
 }
 

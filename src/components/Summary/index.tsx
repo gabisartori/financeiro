@@ -7,9 +7,9 @@ import {
 } from "react-icons/fa";
 
 type SummaryProps = {
-    receitas: number
-    despesas: number
-    total: number
+    receitas: string
+    despesas: string
+    total: string
 }
 
 export default function Summary(props: SummaryProps){
