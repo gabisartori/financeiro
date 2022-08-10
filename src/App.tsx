@@ -4,12 +4,13 @@ import Header from './components/Header/index';
 import Summary from './components/Summary';
 import GlobalStyle from './styles/global';
 
+type entrada = {
+  desc: string;
+  quant: number;
+  gasto: boolean
+}
+
 function App() {
-  type entrada = {
-    descricao: string;
-    quantia: number;
-    isDespesa: boolean
-  }
   
   const data = localStorage.getItem('entradas');
   const [entradas, setEntradas] = useState(data ? JSON.parse(data) : []);
@@ -20,12 +21,12 @@ function App() {
 
   useEffect(()=>{
     const quantiaDespesas: number[] = entradas.filter(
-      (item: entrada) => item.isDespesa
-      ).map((entrada: entrada)=> entrada.quantia)
+      (item: entrada) => item.gasto
+      ).map((entrada: entrada)=> entrada.quant);
 
     const quantiaReceitas: number[] = entradas.filter(
-      (item: entrada) => !item.isDespesa
-      ).map((entrada: entrada)=> entrada.quantia)
+      (item: entrada) => !item.gasto
+      ).map((entrada: entrada)=> entrada.quant);
     
     const receita = Number(quantiaReceitas.reduce((acc, cur) => acc + cur, 0).toFixed(2));
     const despesa = Number(quantiaDespesas.reduce((acc, cur) => acc + cur, 0).toFixed(2));
