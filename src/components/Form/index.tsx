@@ -7,7 +7,12 @@ type FormProps = {
 
 
 export default function Form(props: FormProps){
-    
+
+    function generateId(){
+        const id = Math.round(Math.random()*1000);
+        return id;
+    }
+
     const [descricao, setDescricao] = useState("");
     const [quantia, setQuantia] = useState("");
     const [isDespesa, setIsDespesa] = useState(false);
@@ -22,6 +27,7 @@ export default function Form(props: FormProps){
         }
 
         const entrada = {
+            id: generateId(),
             desc: descricao,
             quant: Number(quantia),
             gasto: isDespesa

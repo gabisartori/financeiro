@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Form from './components/Form';
 import Header from './components/Header/index';
 import Summary from './components/Summary';
+import Grid from './components/Grid';
 import GlobalStyle from './styles/global';
 
 type entrada = {
+  id: number,
   desc: string;
   quant: number;
   gasto: boolean
@@ -50,6 +52,7 @@ function App() {
       <Header />
       <Summary receitas={receitas.toFixed(2)} despesas={despesas.toFixed(2)} total={total.toFixed(2)} />
       <Form handleAdd={handleAdd}/>
+      <Grid items={entradas} setItems={setEntradas}/>
     </div>
   );
 }
