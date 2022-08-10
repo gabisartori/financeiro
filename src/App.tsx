@@ -36,7 +36,7 @@ function App() {
     setDespesas(despesa);
     setTotal(saldo);
 
-  }, entradas)
+  }, [entradas])
 
   const handleAdd = (entrada: entrada) => {
     const newEntradas = [...entradas, entrada];
