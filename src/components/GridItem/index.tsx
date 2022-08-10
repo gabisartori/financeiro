@@ -1,4 +1,10 @@
 import * as C from './style';
+import {
+    FaRegArrowAltCircleUp,
+    FaRegArrowAltCircleDown,
+    FaTrash,
+  } from "react-icons/fa";
+
 
 type entrada = {
     id: number,
@@ -15,6 +21,17 @@ type GridItemProps = {
 
 export default function GridItem(props: GridItemProps){
     return(
-        <h1>Hello world</h1>
+        <C.Tr>
+            <C.Td>{props.item.desc}</C.Td>
+            <C.Td>{props.item.quant}</C.Td>
+            <C.Td style={{textAlign: 'center'}}>{props.item.gasto? (
+                <FaRegArrowAltCircleDown color="red" />) : (
+                <FaRegArrowAltCircleUp color="green" />)}
+            </C.Td>
+            <C.Td style={{textAlign: 'center'}}>
+                <FaTrash onClick={() => props.onDelete(props.item.id)} />
+            </C.Td> 
+
+        </C.Tr>
     )
 }
