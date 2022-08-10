@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import Form from './components/Form';
-import Header from './components/Header/index';
-import Summary from './components/Summary';
-import Grid from './components/Grid';
-import GlobalStyle from './styles/global';
+import Form from '../components/Form';
+import Header from '../components/Header/index';
+import Summary from '../components/Summary';
+import Grid from '../components/Grid';
+import GlobalStyle from '../styles/global';
 
 type entrada = {
   id: number,
